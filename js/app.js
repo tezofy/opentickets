@@ -93,16 +93,19 @@
       <article class="event-card">
         <a class="event-card-media" href="event.html?id=${encodeURIComponent(event.id)}" aria-label="View ${escapeHtml(event.title)} details">
           <img src="${event.image}" alt="${escapeHtml(event.alt)}" loading="lazy">
-          <span class="event-chip"><span class="chip-check"><svg class="icon"><use href="assets/icons.svg#icon-check"></use></svg></span>${escapeHtml(categoryText)}</span>
+          <time class="event-date-stamp" datetime="${escapeHtml(event.date.slice(0, 10))}" aria-label="Event date: ${escapeHtml(event.day)} ${escapeHtml(event.month)}"><b>${escapeHtml(event.day)}</b><small>${escapeHtml(event.month)}</small></time>
         </a>
         <div class="event-card-body">
+          <div class="event-card-topline">
+            <div class="event-card-line"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#icon-location"></use></svg><span>${escapeHtml(event.venue)}, ${escapeHtml(event.city)}</span></div>
+            <span class="event-card-kind">${escapeHtml(categoryText)}</span>
+          </div>
           <h3 class="event-card-title"><a href="event.html?id=${encodeURIComponent(event.id)}">${escapeHtml(event.title)}</a></h3>
-          <div class="event-card-line"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#icon-location"></use></svg><span>${escapeHtml(event.venue)}, ${escapeHtml(event.city)}</span></div>
           <div class="event-card-schedule" aria-label="Event date and start time">
             <div class="event-card-schedule-unit"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#icon-calendar"></use></svg><span><small>EVENT DATE</small><strong>${escapeHtml(dateText)}</strong></span></div>
             <div class="event-card-schedule-unit"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#icon-clock"></use></svg><span><small>STARTS</small><strong>${escapeHtml(event.time)} <em>SAST</em></strong></span></div>
           </div>
-          <div class="event-card-bottom"><span class="event-price">${priceText}</span><div class="event-card-actions"><span class="event-card-action-date" aria-label="Event date: ${escapeHtml(event.day)} ${escapeHtml(event.month)}"><b>${escapeHtml(event.day)}</b><small>${escapeHtml(event.month)}</small></span><a class="event-card-view" href="event.html?id=${encodeURIComponent(event.id)}" aria-label="View ${escapeHtml(event.title)} details">View ticket</a><a class="event-card-cta" href="${officialUrl(event)}" aria-label="Buy tickets for ${escapeHtml(event.title)} on Open Tickets">Buy ticket <span>↗</span></a></div></div>
+          <div class="event-card-bottom"><span class="event-price">${priceText}</span><div class="event-card-actions"><a class="event-card-view" href="event.html?id=${encodeURIComponent(event.id)}" aria-label="View ${escapeHtml(event.title)} details">View ticket</a><a class="event-card-cta" href="${officialUrl(event)}" aria-label="Buy tickets for ${escapeHtml(event.title)} on Open Tickets">Buy ticket <span>↗</span></a></div></div>
         </div>
       </article>
     </div>`;
@@ -115,14 +118,14 @@
     target.innerHTML = events.length ? events.map((event) => eventMarkup(event, col)).join('') : '<div class="event-empty">No events match the selected filters.</div>';
   }
 
-  // Keep the featured images full-width for three seconds after the page finishes loading, then reveal the story split.
+  // Briefly stage the featured event cards, then reveal their details without delaying interaction.
   const experienceCards = document.querySelectorAll('.experience-ticket');
   if (experienceCards.length && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     document.body.classList.add('experience-reveal-pending');
     const scheduleExperienceReveal = () => window.setTimeout(() => {
       document.body.classList.remove('experience-reveal-pending');
       document.body.classList.add('experience-revealed');
-    }, 3000);
+    }, 850);
     if (document.readyState === 'complete') scheduleExperienceReveal();
     else window.addEventListener('load', scheduleExperienceReveal, { once: true });
   }
@@ -197,19 +200,18 @@
     if (active && active.dataset.filter !== '*') allGrid.querySelectorAll('.event-item').forEach((item) => item.hidden = !item.matches(active.dataset.filter));
   });
 
-  // Live 72-hour ticket carousel: a three-card 3D fan with a flip-over event-details page.
+  // Actual listings beginning within 72 hours only; the deck never pads with placeholders.
   const nearTermGrid = document.getElementById('nearTermGrid');
   if (nearTermGrid) {
     const mainCard = document.getElementById('mainCountdownCard');
     const carousel = document.getElementById('nearTermCarousel');
     const previousButton = document.getElementById('nearTermPrev');
     const nextButton = document.getElementById('nearTermNext');
-    const dots = document.getElementById('nearTermCarouselDots');
-    const counter = document.getElementById('nearTermCarouselPosition');
     const status = document.getElementById('nearTermCarouselStatus');
     const nextWindow = 72 * 60 * 60 * 1000;
     let visibleIds = [];
     let currentTicketIndex = 0;
+    const mobileDeckQuery = window.matchMedia('(max-width: 767px)');
     let activePointer = null;
     let suppressCarouselClickUntil = 0;
     const twoDigits = (value) => String(value).padStart(2, '0');
@@ -228,11 +230,12 @@
         carousel.classList.toggle('is-empty', count === 0);
         carousel.classList.toggle('has-single-event', count < 2);
       }
+      const isMobileDeck = mobileDeckQuery.matches;
       cards.forEach((card, index) => {
         let offset = index - currentTicketIndex;
         if (offset > count / 2) offset -= count;
         if (offset < -count / 2) offset += count;
-        const position = offset === 0 ? 'center' : offset === 1 ? 'right' : offset === -1 ? 'left' : 'behind';
+        const position = offset === 0 ? 'center' : offset === 1 ? 'right' : offset === -1 ? 'left' : (!isMobileDeck && offset === 2 ? 'far-right' : !isMobileDeck && offset === -2 ? 'far-left' : 'behind');
         const active = position === 'center';
         card.dataset.ticketIndex = String(index);
         card.dataset.offset = String(offset);
@@ -243,13 +246,8 @@
         card.style.zIndex = String(count + 2 - Math.abs(offset));
         card.querySelectorAll('button, a').forEach((control) => { control.tabIndex = active ? 0 : -1; });
       });
-      if (counter) counter.textContent = count ? `${twoDigits(currentTicketIndex + 1)} / ${twoDigits(count)}` : '00 / 00';
       if (previousButton) previousButton.disabled = count < 2;
       if (nextButton) nextButton.disabled = count < 2;
-      if (dots) {
-        dots.innerHTML = cards.map((card, index) => `<button class="ticket-carousel-dot${index === currentTicketIndex ? ' is-active' : ''}" type="button" data-ticket-dot="${index}" aria-label="Show ${escapeHtml(card.dataset.title)}" aria-current="${index === currentTicketIndex ? 'true' : 'false'}"></button>`).join('');
-        dots.querySelectorAll('[data-ticket-dot]').forEach((button) => button.addEventListener('click', () => selectTicket(Number(button.dataset.ticketDot))));
-      }
       if (status && announce && count) status.textContent = `${cards[currentTicketIndex].dataset.title}, ticket ${currentTicketIndex + 1} of ${count}`;
     };
     const selectTicket = (index) => {
@@ -262,6 +260,7 @@
       currentTicketIndex = ((index % cards.length) + cards.length) % cards.length;
       updateTicketCarousel(true);
     };
+    mobileDeckQuery.addEventListener?.('change', () => updateTicketCarousel());
     const flipTicket = (card, force) => {
       if (!card?.classList.contains('is-active')) {
         if (card) selectTicket(Number(card.dataset.ticketIndex));
@@ -286,12 +285,6 @@
         if (title) title.textContent = countdownEvent.title;
         if (meta) meta.textContent = `${countdownEvent.day} ${countdownEvent.month} · ${countdownEvent.time} SAST · ${countdownEvent.venue}`;
       }
-      nearTermGrid.querySelectorAll('[data-near-countdown]').forEach((node) => {
-        const cardEvent = eventById(node.dataset.nearCountdown);
-        const left = countdownParts(eventTimestamp(cardEvent), now);
-        const short = `${left.hours}h ${twoDigits(left.minutes)}m ${twoDigits(left.seconds)}s`;
-        node.textContent = left.hours === 0 && left.minutes === 0 && left.seconds === 0 ? 'Starting now' : short;
-      });
     };
     updateHomepageCountdown = updateCountdownValues;
     const renderNearTerm = (now = Date.now()) => {
@@ -301,7 +294,6 @@
       if (!upcoming.length) {
         nearTermGrid.innerHTML = '<div class="near-term-empty">No events are scheduled to begin within the next 72 hours. <a href="events.html">Browse the full event calendar ↗</a></div>';
         currentTicketIndex = 0;
-        if (carousel) carousel.classList.add('is-empty');
         if (mainCard) mainCard.hidden = !activeHeroEvent;
         if (activeHeroEvent) updateCountdownValues(activeHeroEvent, now);
         updateTicketCarousel();
@@ -310,34 +302,36 @@
       if (mainCard) mainCard.hidden = false;
       const nextEvent = upcoming[0];
       nearTermGrid.innerHTML = upcoming.map((event, index) => {
-        const dateText = new Date(eventTimestamp(event)).toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'short', timeZone: 'Africa/Johannesburg' });
-        const dateWeekday = new Date(eventTimestamp(event)).toLocaleDateString('en-GB', { weekday: 'short', timeZone: 'Africa/Johannesburg' });
+        const date = new Date(eventTimestamp(event));
+        const dateText = date.toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'short', timeZone: 'Africa/Johannesburg' });
         const dateStamp = `${event.day} ${event.month}`;
         const ticketNumber = String(index + 1).padStart(2, '0');
         const fullVenue = [event.venue, event.city].filter(Boolean).join(', ');
         const priceText = event.price == null ? 'See official listing' : `From ${currency(event.price)}`;
-        return `<article class="near-term-card ticket-carousel-card" data-event-id="${escapeHtml(event.id)}" data-title="${escapeHtml(event.title)}" data-position="behind" aria-hidden="true">
+        const safeTitle = escapeHtml(event.title);
+        const eventPage = `event.html?id=${encodeURIComponent(event.id)}`;
+        const categoryText = event.category === 'football' ? `Sports · ${event.categoryLabel}` : `Events · ${event.categoryLabel}`;
+        return `<article class="near-term-card ticket-carousel-card" data-event-id="${escapeHtml(event.id)}" data-title="${safeTitle}" data-position="behind" aria-hidden="true">
           <div class="ticket-flip-inner">
-            <section class="ticket-face ticket-face-front" aria-label="${escapeHtml(event.title)} event ticket">
-              <div class="ticket-poster"><img src="${escapeHtml(event.image)}" alt="${escapeHtml(event.alt)}" loading="eager"></div>
+            <section class="ticket-face ticket-face-front" aria-label="${safeTitle} event">
+              <a class="ticket-poster" href="${eventPage}" aria-label="View ${safeTitle} event details"><img src="${escapeHtml(event.image)}" alt="${escapeHtml(event.alt)}" loading="eager">
+                <time class="event-date-stamp" datetime="${escapeHtml(event.date.slice(0, 10))}" aria-label="Event date: ${escapeHtml(event.day)} ${escapeHtml(event.month)}"><b>${escapeHtml(event.day)}</b><small>${escapeHtml(event.month)}</small></time>
+              </a>
               <div class="ticket-front-content">
-                <div class="ticket-card-kicker"><span>OPEN TICKETS · EVENT PASS</span><span>${escapeHtml(event.categoryLabel)}</span></div>
-                <h3 class="ticket-card-title">${escapeHtml(event.title)}</h3>
-                <div class="ticket-meta-row ticket-meta-row-compact">
-                  <div><small>DATE</small><strong>${escapeHtml(dateStamp)}</strong><span>${escapeHtml(dateWeekday)}</span></div>
-                  <div><small>TIME · SAST</small><strong>${escapeHtml(event.time)}</strong><span>South Africa</span></div>
-                  <div class="ticket-meta-venue"><small>VENUE</small><strong title="${escapeHtml(event.venue)}">${escapeHtml(event.venue)}</strong><span>${escapeHtml(event.city || 'South Africa')}</span></div>
+                <div class="event-card-topline"><div class="event-card-line"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#icon-location"></use></svg><span>${escapeHtml(fullVenue || 'See official event listing')}</span></div><span class="event-card-kind">${escapeHtml(categoryText)}</span></div>
+                <h3 class="ticket-card-title"><a href="${eventPage}">${safeTitle}</a></h3>
+                <div class="event-card-schedule" aria-label="Event date and start time">
+                  <div class="event-card-schedule-unit"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#icon-calendar"></use></svg><span><small>EVENT DATE</small><strong>${escapeHtml(dateText)}</strong></span></div>
+                  <div class="event-card-schedule-unit"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#icon-clock"></use></svg><span><small>STARTS</small><strong>${escapeHtml(event.time)} <em>SAST</em></strong></span></div>
                 </div>
-                <div class="ticket-perforation" aria-hidden="true"><i></i><span></span><i></i></div>
-                <div class="ticket-starts-row"><span><small>STARTS IN</small><strong data-near-countdown="${escapeHtml(event.id)}">—</strong></span><b>${escapeHtml(priceText)}</b></div>
-                <button class="ticket-turn-button" type="button" data-ticket-turn aria-expanded="false">Turn ticket for event details <span aria-hidden="true">↻</span></button>
+                <div class="ticket-front-footer"><span class="ticket-front-price">${escapeHtml(priceText)}</span><button class="ticket-turn-button" type="button" data-ticket-turn aria-expanded="false">More details <span aria-hidden="true">↗</span></button></div>
               </div>
             </section>
-            <section class="ticket-face ticket-face-back" aria-label="More about ${escapeHtml(event.title)}">
+            <section class="ticket-face ticket-face-back" aria-label="More about ${safeTitle}">
               <div class="ticket-back-header"><span>OPEN TICKETS / EVENT FILE</span><span>PASS ${ticketNumber}</span></div>
               <div class="ticket-back-content">
                 <div class="ticket-back-eyebrow">EVENT DETAILS</div>
-                <h3>${escapeHtml(event.title)}</h3>
+                <h3>${safeTitle}</h3>
                 <p>${escapeHtml(event.description)}</p>
                 <div class="ticket-back-facts">
                   <div><small>WHEN</small><strong>${escapeHtml(dateText)} · ${escapeHtml(event.time)} SAST</strong></div>
@@ -667,22 +661,28 @@
     const image = document.getElementById('heroImage');
     let liveEvents = null;
     const makeUpcomingSlides = () => {
+      const now = Date.now();
       const source = liveEvents || EVENTS;
-      const upcoming = source.filter((event) => eventTimestamp(event) > Date.now());
-      if (!liveEvents) {
-        upcoming.sort((a, b) => eventTimestamp(a) - eventTimestamp(b));
-        // Keep the user-selected Appel artwork first while it remains upcoming.
-        const appelIndex = upcoming.findIndex((event) => event.id === 'appel');
-        if (appelIndex > 0) upcoming.unshift(upcoming.splice(appelIndex, 1)[0]);
-      }
-      return upcoming.map((event) => {
+      const upcoming = source.filter((event) => eventTimestamp(event) > now);
+      upcoming.sort((a, b) => eventTimestamp(a) - eventTimestamp(b));
+      const localUpcoming = EVENTS.filter((event) => eventTimestamp(event) > now);
+      const choose = (predicate, fallbackId) => upcoming.find(predicate) || localUpcoming.find(predicate) || localUpcoming.find((event) => event.id === fallbackId) || null;
+      const footballEvent = choose((event) => event.category === 'football', 'sundowns-durban');
+      const concertEvent = choose((event) => event.id === 'appel', 'appel') || choose((event) => event.category === 'music', null);
+      const makeSlide = (event, forcedImage = null, forcedAlt = null) => {
         const fromOfficialFeed = Boolean(liveEvents) && /^https:\/\//i.test(event.image || '');
         return {
           event,
-          image: fromOfficialFeed ? `/api/hero-image?url=${encodeURIComponent(event.image)}` : (event.id === 'appel' ? 'assets/hero-appel-event.png' : event.image),
-          alt: event.id === 'appel' ? 'Appel in PE event artwork, 6 November 2026' : (event.alt || event.title)
+          image: forcedImage || (fromOfficialFeed ? `/api/hero-image?url=${encodeURIComponent(event.image)}` : (event.id === 'appel' ? 'assets/hero-appel-event.png' : event.image)),
+          alt: forcedAlt || (event.id === 'appel' ? 'Appel in PE concert event artwork, 6 November 2026' : (event.alt || event.title))
         };
-      });
+      };
+      const featuredSlides = [];
+      if (footballEvent) featuredSlides.push(makeSlide(footballEvent, 'assets/football-matchday-hero.png', 'Illustrative pre-match football team lineup artwork; not a specific team or live-event photograph'));
+      if (concertEvent) featuredSlides.push(makeSlide(concertEvent, concertEvent.id === 'appel' ? 'assets/hero-appel-event.png' : null, concertEvent.id === 'appel' ? 'Appel in PE concert banner, 6 November 2026' : undefined));
+      const featuredIds = new Set(featuredSlides.map((slide) => slide.event.id));
+      const remainingSlides = upcoming.filter((event) => !featuredIds.has(event.id)).map((event) => makeSlide(event));
+      return [...featuredSlides, ...remainingSlides];
     };
     let slides = makeUpcomingSlides();
     let current = 0;

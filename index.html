@@ -16,13 +16,12 @@
   <header class="site-header" id="siteHeader">
     <div class="container header-inner">
       <a class="brand brand-light" href="index.html" aria-label="Open Tickets home">
-        <span class="brand-mark" aria-hidden="true"><svg class="icon"><use href="assets/icons.svg#icon-ticket"></use></svg></span>
-        <span class="brand-word"><b>open</b><em>tickets</em></span>
+        <img class="header-brand-logo" src="assets/open-tickets-logo.png" alt="" aria-hidden="true">
       </a>
       <nav class="primary-nav" id="primaryNav" aria-label="Main navigation">
         <a class="nav-link active" aria-current="page" href="events.html">Events</a><a class="nav-link" href="events.html?category=football">Sports</a><a class="nav-link" href="events.html?category=music">Music</a><a class="nav-link" href="events.html?category=outdoor">Outdoor</a><a class="nav-link" href="faq.html">FAQs</a><a class="nav-link" href="https://opentickets.co.za/support">Support</a>
-      </nav>
-      <a class="desktop-header-search" href="search.html" aria-label="Search events"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#icon-search"></use></svg></a><div class="header-actions"><a class="header-login" href="https://opentickets.co.za/bookings">My account</a><a class="header-signup" href="events.html">Browse events</a></div>
+      <a class="nav-link mobile-auth-link mobile-auth-signup" href="https://www.opentickets.co.za/faq/account-profile" aria-label="Sign up: learn how to create an Open Tickets account">Sign up</a><a class="nav-link mobile-auth-link mobile-auth-login" href="https://opentickets.co.za/login">Log in</a></nav>
+      <a class="desktop-header-search" href="search.html" aria-label="Search events"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#icon-search"></use></svg></a><div class="header-actions"><a class="header-signup" href="https://www.opentickets.co.za/faq/account-profile" aria-label="Sign up: learn how to create an Open Tickets account">Sign up</a><a class="header-login" href="https://opentickets.co.za/login">Log in</a></div>
       <a class="mobile-header-search" href="search.html" aria-label="Search events"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#icon-search"></use></svg></a>
       <button class="nav-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="primaryNav"><span></span><span></span><span></span></button>
     </div>
@@ -77,8 +76,13 @@
         </div>
         <div class="ticket-carousel" id="nearTermCarousel" aria-label="Upcoming event tickets">
           <div class="near-term-grid ticket-carousel-stage" id="nearTermGrid" role="region" aria-roledescription="carousel" aria-label="Upcoming event ticket carousel" aria-describedby="nearTermCarouselInstructions" tabindex="0" aria-live="off"></div>
+          <div class="ticket-carousel-footer" role="group" aria-label="Ticket carousel controls">
+            <button class="ticket-carousel-arrow ticket-carousel-prev" id="nearTermPrev" type="button" aria-label="Previous event card">‹</button>
+            <button class="ticket-carousel-arrow ticket-carousel-next" id="nearTermNext" type="button" aria-label="Next event card">›</button>
+            <span class="ticket-carousel-hint">SWIPE · DRAG · OR PICK A CARD</span>
+          </div>
           <span class="ticket-carousel-status" id="nearTermCarouselStatus" aria-live="polite" aria-atomic="true"></span>
-          <span class="ticket-carousel-instructions" id="nearTermCarouselInstructions">Swipe or drag horizontally to browse. You can also use the left and right arrow keys.</span>
+          <span class="ticket-carousel-instructions" id="nearTermCarouselInstructions">Swipe or drag horizontally to browse, select a side card, use the arrow controls, or use the left and right arrow keys.</span>
         </div>
       </div>
     </section>
@@ -120,18 +124,18 @@
           </details>
           <div class="featured-tickets-intro"><a class="btn btn-outline-light" href="events.html">Browse all events <span>↗</span></a></div>
         </div>
-        <div class="experience-ticket-grid">
+        <div class="experience-ticket-grid" role="region" aria-label="Featured events. Swipe or scroll horizontally to browse." tabindex="0">
           <article class="experience-ticket">
-            <a class="experience-ticket-image" href="event.html?id=orlando" aria-label="View Orlando Pirates vs Milford FC details"><img src="assets/orlando-pirates-vs-milford.jpg" alt="Orlando Pirates vs Milford FC event banner"><span class="experience-ticket-category"><svg class="icon"><use href="assets/icons.svg#icon-football"></use></svg> SPORTS · FOOTBALL</span></a>
-            <div class="experience-ticket-copy"><span class="experience-ticket-date">27 OCT · 7:00 PM SAST</span><details class="mobile-description-disclosure" data-mobile-collapse open><summary><h3>Orlando Pirates vs Milford FC</h3></summary><p class="mobile-description-copy">Carling Knockout Cup fixture at Orlando Amstel Arena, Johannesburg.</p></details><a href="event.html?id=orlando" class="experience-ticket-link">View tickets <svg class="icon"><use href="assets/icons.svg#icon-arrow"></use></svg></a></div>
+            <a class="experience-ticket-image" href="event.html?id=orlando" aria-label="View Orlando Pirates vs Milford FC details"><img src="assets/orlando-pirates-vs-milford.jpg" alt="Orlando Pirates vs Milford FC event banner"></a>
+            <div class="experience-ticket-copy"><span class="experience-ticket-category"><svg class="icon"><use href="assets/icons.svg#icon-football"></use></svg> SPORTS · FOOTBALL</span><span class="experience-ticket-date">27 OCT · 7:00 PM SAST</span><details class="mobile-description-disclosure" data-mobile-collapse open><summary><h3>Orlando Pirates vs Milford FC</h3></summary><p class="mobile-description-copy">Carling Knockout Cup fixture at Orlando Amstel Arena, Johannesburg.</p></details><a href="event.html?id=orlando" class="experience-ticket-link">View tickets <svg class="icon"><use href="assets/icons.svg#icon-arrow"></use></svg></a></div>
           </article>
           <article class="experience-ticket">
-            <a class="experience-ticket-image" href="event.html?id=appel" aria-label="View Appel in PE details"><img src="assets/appel-in-pe.png" alt="Appel in PE event banner"><span class="experience-ticket-category"><svg class="icon"><use href="assets/icons.svg#icon-music"></use></svg> MUSIC · LIVE</span></a>
-            <div class="experience-ticket-copy"><span class="experience-ticket-date">06 NOV · 9:00 PM SAST</span><details class="mobile-description-disclosure" data-mobile-collapse open><summary><h3>Appel in PE</h3></summary><p class="mobile-description-copy">Live performance at Boardwalk Hotel and Casino in Gqeberha. Tickets listed from R250.</p></details><a href="event.html?id=appel" class="experience-ticket-link">View tickets <svg class="icon"><use href="assets/icons.svg#icon-arrow"></use></svg></a></div>
+            <a class="experience-ticket-image" href="event.html?id=appel" aria-label="View Appel in PE details"><img src="assets/appel-in-pe.png" alt="Appel in PE event banner"></a>
+            <div class="experience-ticket-copy"><span class="experience-ticket-category"><svg class="icon"><use href="assets/icons.svg#icon-music"></use></svg> MUSIC · LIVE</span><span class="experience-ticket-date">06 NOV · 9:00 PM SAST</span><details class="mobile-description-disclosure" data-mobile-collapse open><summary><h3>Appel in PE</h3></summary><p class="mobile-description-copy">Live performance at Boardwalk Hotel and Casino in Gqeberha. Tickets listed from R250.</p></details><a href="event.html?id=appel" class="experience-ticket-link">View tickets <svg class="icon"><use href="assets/icons.svg#icon-arrow"></use></svg></a></div>
           </article>
           <article class="experience-ticket">
-            <a class="experience-ticket-image" href="event.html?id=going-west" aria-label="View Going Back West details"><img src="assets/going-back-west.png" alt="Going Back West event banner"><span class="experience-ticket-category"><svg class="icon"><use href="assets/icons.svg#icon-spark"></use></svg> OUTDOOR · LIVE</span></a>
-            <div class="experience-ticket-copy"><span class="experience-ticket-date">07 NOV · 1:00 PM SAST</span><details class="mobile-description-disclosure" data-mobile-collapse open><summary><h3>Going Back West</h3></summary><p class="mobile-description-copy">Upcoming event at Tarlton International Raceway. Check the official listing for ticket options.</p></details><a href="event.html?id=going-west" class="experience-ticket-link">View tickets <svg class="icon"><use href="assets/icons.svg#icon-arrow"></use></svg></a></div>
+            <a class="experience-ticket-image" href="event.html?id=going-west" aria-label="View Going Back West details"><img src="assets/going-back-west.png" alt="Going Back West event banner"></a>
+            <div class="experience-ticket-copy"><span class="experience-ticket-category"><svg class="icon"><use href="assets/icons.svg#icon-spark"></use></svg> OUTDOOR · LIVE</span><span class="experience-ticket-date">07 NOV · 1:00 PM SAST</span><details class="mobile-description-disclosure" data-mobile-collapse open><summary><h3>Going Back West</h3></summary><p class="mobile-description-copy">Upcoming event at Tarlton International Raceway. Check the official listing for ticket options.</p></details><a href="event.html?id=going-west" class="experience-ticket-link">View tickets <svg class="icon"><use href="assets/icons.svg#icon-arrow"></use></svg></a></div>
           </article>
         </div>
       </div>
@@ -173,13 +177,28 @@
         </nav>
       </div>
     </section>
+
+    <section class="concert-feature-band" aria-labelledby="concertFeatureTitle">
+      <div class="container">
+        <div class="concert-feature-panel">
+          <img class="concert-feature-image" src="assets/hero-appel-event.png" alt="Appel concert banner for Port Elizabeth on 6 November 2026" loading="lazy">
+          <div class="concert-feature-copy">
+            <div class="eyebrow"><span class="eyebrow-mark"></span> LIVE MUSIC · GQEBERHA</div>
+            <h2 id="concertFeatureTitle">A night made<br>for <em>singing along.</em></h2>
+            <p>Appel live at Boardwalk Hotel &amp; Casino on 6 November 2026.</p>
+            <a class="concert-feature-link" href="event.html?id=appel">View event details <span aria-hidden="true">↗</span></a>
+            <small>Check the official event listing for current ticket information.</small>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <nav class="mobile-bottom-nav" aria-label="Mobile navigation">
     <a class="bottom-nav-link active" href="index.html" aria-current="page"><svg class="icon"><use href="assets/icons.svg#icon-home"></use></svg><span>Home</span></a>
     <a class="bottom-nav-link" href="events.html" ><svg class="icon"><use href="assets/icons.svg#icon-calendar"></use></svg><span>Events</span></a>
     <a class="bottom-nav-link" href="https://opentickets.co.za/bookings"><svg class="icon"><use href="assets/icons.svg#icon-wallet"></use></svg><span>Tickets</span></a>
-    <a class="bottom-nav-link" href="https://opentickets.co.za/bookings" aria-label="Your Open Tickets profile"><svg class="icon"><use href="assets/icons.svg#icon-account"></use></svg><span>Profile</span></a>
+    <a class="bottom-nav-link" href="https://www.opentickets.co.za/faq/account-profile" aria-label="Open Tickets account and profile guidance"><svg class="icon"><use href="assets/icons.svg#icon-account"></use></svg><span>Profile</span></a>
   </nav>
 
   <footer class="site-footer">
