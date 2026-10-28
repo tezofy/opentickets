@@ -14,30 +14,44 @@
     {
       id: 'sundowns-marumo', officialId: '01m5cf9ptpd5rqp9pp12ahqehm', title: 'Mamelodi Sundowns vs Marumo Gallants (CKC)', category: 'football', categoryLabel: 'Football',
       date: '2026-10-27T19:00:00', day: '27', month: 'OCT', time: '7:00 PM', venue: 'Loftus Versfeld Stadium', city: 'Pretoria',
-      image: 'assets/sundowns-vs-marumo.jpg', alt: 'Mamelodi Sundowns vs Marumo Gallants event banner', price: null,
+      image: 'assets/sundowns-vs-marumo.jpg', alt: 'Mamelodi Sundowns vs Marumo Gallants event banner', price: 60,
       description: 'Mamelodi Sundowns meet Marumo Gallants in a Carling Knockout Cup fixture at Loftus Versfeld Stadium.',
-      venueAddress: 'Kirkness Street, Arcadia, Pretoria, South Africa', tiers: [{ name: 'Available ticket category', price: null }]
+      venueAddress: 'Kirkness Street, Arcadia, Pretoria, South Africa', tiers: [{ name: 'General Access (All Ages)', price: 60 }]
     },
     {
       id: 'orlando', officialId: '01m5cfmp8rgz7h5v31fhaae677', title: 'Orlando Pirates vs Milford FC (CKC)', category: 'football', categoryLabel: 'Football',
       date: '2026-10-27T19:00:00', day: '27', month: 'OCT', time: '7:00 PM', venue: 'Orlando Amstel Arena', city: 'Johannesburg',
-      image: 'assets/orlando-pirates-vs-milford.jpg', alt: 'Orlando Pirates vs Milford FC event banner', price: null,
+      image: 'assets/orlando-pirates-vs-milford.jpg', alt: 'Orlando Pirates vs Milford FC event banner', price: 60,
       description: 'Orlando Pirates face Milford FC in a Carling Knockout Cup fixture at Orlando Amstel Arena.',
-      venueAddress: 'Mooki Street, Orlando East, Johannesburg, South Africa', tiers: [{ name: 'Available ticket category', price: null }]
+      venueAddress: 'Mooki Street, Orlando East, Johannesburg, South Africa', tiers: [{ name: 'General Access', price: 60 }]
     },
     {
       id: 'durban-stellenbosch', officialId: '01m59t7hbq4v6rsera8x5zzpaz', title: 'Durban City FC vs Stellenbosch FC (CKC)', category: 'football', categoryLabel: 'Football',
       date: '2026-10-28T19:00:00', day: '28', month: 'OCT', time: '7:00 PM', venue: 'Chatsworth Stadium', city: 'Durban',
-      image: 'assets/durban-city-vs-stellenbosch.jpg', alt: 'Durban City FC vs Stellenbosch FC event banner', price: null,
+      image: 'assets/durban-city-vs-stellenbosch.jpg', alt: 'Durban City FC vs Stellenbosch FC event banner', price: 60,
       description: 'Durban City FC and Stellenbosch FC meet in a Carling Knockout Cup fixture at Chatsworth Stadium.',
-      venueAddress: 'Chatsworth, Durban, KwaZulu-Natal, South Africa', tiers: [{ name: 'Available ticket category', price: null }]
+      venueAddress: 'Chatsworth, Durban, KwaZulu-Natal, South Africa', tiers: [{ name: 'General Access', price: 60 }]
     },
     {
       id: 'sundowns-durban', officialId: '01m5ena2smd0hden3vqrxdks07', title: 'Mamelodi Sundowns vs Durban City', category: 'football', categoryLabel: 'Football',
       date: '2026-10-31T20:15:00', day: '31', month: 'OCT', time: '8:15 PM', venue: 'Royal Bafokeng Stadium', city: 'Rustenburg',
-      image: 'assets/sundowns-vs-durban-city.jpg', alt: 'Mamelodi Sundowns vs Durban City event banner', price: null,
+      image: 'assets/sundowns-vs-durban-city.jpg', alt: 'Mamelodi Sundowns vs Durban City event banner', price: 50,
       description: 'Mamelodi Sundowns face Durban City at Royal Bafokeng Stadium on 31 October.',
-      venueAddress: 'Rustenburg, North West, South Africa', tiers: [{ name: 'Available ticket category', price: null }]
+      venueAddress: 'Rustenburg, North West, South Africa', tiers: [{ name: 'General Access (All Ages)', price: 50 }]
+    },
+    {
+      id: 'isr-sewes-hoops', officialId: '01m5h7c18yer4wrqhjsyxrneeg', title: 'ISR Sewes en Hoops', category: 'live', categoryLabel: 'Live event',
+      date: '2026-10-31T07:00:00', day: '31', month: 'OCT', time: '7:00 AM', venue: 'Hoërskool Hartebeespoort', city: 'Hartbeespoort',
+      image: 'assets/isr-sewes-hoops.png', alt: 'ISR Sewes en Hoops official event banner', price: 35,
+      description: 'Refer to the official event page for the current event details, entry guidance and ticket options.',
+      venueAddress: 'Corner R511 and R514, Hartbeespoort, 0216, South Africa', tiers: [{ name: 'General Admission', price: 35 }]
+    },
+    {
+      id: 'kempiefees', officialId: '01kn3tnh35b7mnm7zgfxs5tnkt', title: 'KempieFees 2026', category: 'music', categoryLabel: 'Music festival',
+      date: '2026-10-31T12:00:00', day: '31', month: 'OCT', time: '12:00 PM', venue: 'Hoërskool Kempton Park', city: 'Kempton Park',
+      image: 'assets/kempiefees-2026.jpg', alt: 'KempieFees 2026 official event banner', price: 250,
+      description: 'KempieFees 2026 features live performances and family entertainment. Confirm the current programme and entry rules on the official event page.',
+      venueAddress: 'Van Riebeeck Road and Firlaan, Kempton Park, 1619, South Africa', tiers: [{ name: 'General Admission', price: 250 }]
     },
     {
       id: 'appel', officialId: '01ktvcz2dxv10rs7cvq0q9tc0v', title: 'Appel in PE', category: 'music', categoryLabel: 'Music & live',
@@ -51,34 +65,34 @@
     {
       id: 'going-west', officialId: '01kva9y2phdzcq6p7p12s0r5vy', title: 'Going Back West', category: 'outdoor', categoryLabel: 'Outdoor',
       date: '2026-11-07T13:00:00', day: '07', month: 'NOV', time: '1:00 PM', venue: 'Tarlton International Raceway', city: 'Krugersdorp',
-      image: 'assets/going-back-west.png', alt: 'Going Back West live event banner', price: null,
+      image: 'assets/going-back-west.png', alt: 'Going Back West live event banner', price: 155,
       description: 'Going Back West takes place at Tarlton International Raceway. Refer to the official listing for event details and current ticket options.',
-      venueAddress: 'R24, Tarlton, Krugersdorp, South Africa', tiers: [{ name: 'Available ticket category', price: null }]
+      venueAddress: 'R24, Tarlton, Krugersdorp, South Africa', tiers: [{ name: 'Early Bird', price: 155 }, { name: 'Phase 2', price: 180 }, { name: 'General Admission', price: 230 }, { name: 'VIP', price: 1300 }]
     },
     {
       id: 'black-swan', officialId: '01m0g6gb95z51sc7m9hbtjkqxj', title: 'Black Swan Africa Extravaganza', category: 'music', categoryLabel: 'Music & live',
       date: '2026-11-07T17:00:00', day: '07', month: 'NOV', time: '5:00 PM', venue: 'Twin Trees', city: 'Johannesburg',
-      image: 'assets/black-swan.png', alt: 'Black Swan Africa Extravaganza event banner', price: null,
+      image: 'assets/black-swan.png', alt: 'Black Swan Africa Extravaganza event banner', price: 950,
       description: 'Black Swan Africa Extravaganza takes place at Twin Trees. Refer to the official listing for programme details and current ticket options.',
-      venueAddress: 'Johannesburg, South Africa', tiers: [{ name: 'Available ticket category', price: null }]
+      venueAddress: 'Johannesburg, South Africa', tiers: [{ name: 'General Admit', price: 950 }]
     },
     {
       id: 'prg', officialId: '01m5h6y8j0qjmrxd26sytm2jvp', title: 'PRG Senior Old Boys Ete / Lunch 2026', category: 'music', categoryLabel: 'Community',
       date: '2026-11-13T12:00:00', day: '13', month: 'NOV', time: '12:00 PM', venue: 'Markötter Long Room', city: 'Stellenbosch',
-      image: 'assets/prg-old-boys.png', alt: 'PRG Senior Old Boys event banner', price: null,
+      image: 'assets/prg-old-boys.png', alt: 'PRG Senior Old Boys event banner', price: 0,
       description: 'The PRG Senior Old Boys Ete and lunch takes place at the Markötter Long Room. Consult the official event page for ticket details.',
-      venueAddress: 'Stellenbosch, Western Cape, South Africa', tiers: [{ name: 'Available ticket category', price: null }]
+      venueAddress: 'Stellenbosch, Western Cape, South Africa', tiers: [{ name: 'General Admission 1', price: 0 }]
     },
     {
       id: 'help24', officialId: '01m3vvwks8fnsc3f7qv9fbxpxk', title: 'Help24 Somer Fees', category: 'outdoor', categoryLabel: 'Community',
       date: '2026-11-21T12:00:00', day: '21', month: 'NOV', time: '12:00 PM', venue: 'Hoërskool Florida', city: 'Roodepoort',
-      image: 'assets/help24.png', alt: 'Help24 Somer Fees event banner', price: null,
+      image: 'assets/help24.png', alt: 'Help24 Somer Fees event banner', price: 80,
       description: 'Help24 Somer Fees takes place at Hoërskool Florida. Visit the official event page for current information and ticket options.',
-      venueAddress: 'Roodepoort, Gauteng, South Africa', tiers: [{ name: 'Available ticket category', price: null }]
+      venueAddress: 'Roodepoort, Gauteng, South Africa', tiers: [{ name: 'General Admission', price: 80 }]
     }
   ];
 
-  const HOME_EVENT_IDS = ['kaizer', 'sundowns-marumo', 'orlando', 'appel', 'going-west', 'black-swan'];
+  const HOME_EVENT_IDS = ['isr-sewes-hoops', 'kempiefees', 'sundowns-durban', 'appel', 'going-west', 'black-swan'];
   const currency = (amount) => amount == null ? 'See at checkout' : `R ${Number(amount).toLocaleString('en-ZA', { maximumFractionDigits: 2 })}`;
   const eventById = (id) => EVENTS.find((event) => event.id === id) || EVENTS[0];
   const eventTimestamp = (event) => new Date(`${event.date}+02:00`).getTime();
@@ -105,7 +119,7 @@
             <div class="event-card-schedule-unit"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#icon-calendar"></use></svg><span><small>EVENT DATE</small><strong>${escapeHtml(dateText)}</strong></span></div>
             <div class="event-card-schedule-unit"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#icon-clock"></use></svg><span><small>STARTS</small><strong>${escapeHtml(event.time)} <em>SAST</em></strong></span></div>
           </div>
-          <div class="event-card-bottom"><span class="event-price">${priceText}</span><div class="event-card-actions"><a class="event-card-view" href="event.html?id=${encodeURIComponent(event.id)}" aria-label="View ${escapeHtml(event.title)} details">View ticket</a><a class="event-card-cta" href="${officialUrl(event)}" aria-label="Buy tickets for ${escapeHtml(event.title)} on Open Tickets">Buy ticket <span>↗</span></a></div></div>
+          <div class="event-card-bottom"><span class="event-price">${priceText}</span><div class="event-card-actions"><a class="event-card-view" href="event.html?id=${encodeURIComponent(event.id)}" aria-label="View ${escapeHtml(event.title)} details">View ticket</a><a class="event-card-cta" href="${officialUrl(event)}" aria-label="Buy tickets for ${escapeHtml(event.title)} on Open Tickets">Buy Ticket <span>↗</span></a></div></div>
         </div>
       </article>
     </div>`;
@@ -170,6 +184,17 @@
     const count = document.getElementById('eventCount');
     if (count) count.textContent = String(EVENTS.length).padStart(2, '0');
   }
+  const categoryParam = document.body.dataset.category || new URLSearchParams(location.search).get('category');
+  const updateVisibleEventCount = (grid) => {
+    const count = document.getElementById('eventCount');
+    if (count && grid) count.textContent = String([...grid.querySelectorAll('.event-item')].filter((item) => !item.hidden).length).padStart(2, '0');
+  };
+  const applyPageCategory = (grid, category = categoryParam) => {
+    if (!grid || !category) return;
+    const selector = `.category-${CSS.escape(category)}`;
+    grid.querySelectorAll('.event-item').forEach((item) => { item.hidden = !item.matches(selector); });
+    updateVisibleEventCount(grid);
+  };
   document.querySelectorAll('.isotope-filters').forEach((filterGroup) => {
     filterGroup.addEventListener('click', (event) => {
       const button = event.target.closest('[data-filter]');
@@ -185,12 +210,13 @@
         const show = selector === '*' || item.matches(selector);
         item.hidden = !show;
       });
+      if (grid === allGrid) updateVisibleEventCount(grid);
     });
   });
-  const categoryParam = new URLSearchParams(location.search).get('category');
   if (categoryParam && allGrid) {
     const button = document.querySelector(`.isotope-filters [data-filter=".category-${CSS.escape(categoryParam)}"]`);
     if (button) button.click();
+    else applyPageCategory(allGrid);
   }
   const eventSort = document.getElementById('eventSort');
   if (eventSort && allGrid) eventSort.addEventListener('change', () => {
@@ -198,9 +224,65 @@
     renderInto(allGrid, sorted, 'col-12 col-sm-6 col-lg-4');
     const active = document.querySelector('.event-page-filters .filter-btn.active');
     if (active && active.dataset.filter !== '*') allGrid.querySelectorAll('.event-item').forEach((item) => item.hidden = !item.matches(active.dataset.filter));
+    else if (categoryParam) applyPageCategory(allGrid);
+    updateVisibleEventCount(allGrid);
   });
 
-  // Actual listings beginning within 72 hours only; the deck never pads with placeholders.
+  // A seamless, category-scoped title/date marquee sits below each listing hero.
+  const categoryMarqueeTrack = document.getElementById('categoryMarqueeTrack');
+  const categoryMarqueeWindow = document.getElementById('categoryMarqueeWindow');
+  const categoryMarqueeRoot = document.getElementById('categoryEventTicker');
+  if (categoryMarqueeTrack && categoryMarqueeWindow && categoryMarqueeRoot) {
+    const marqueeCategory = categoryParam || 'all';
+    const marqueeEvents = EVENTS
+      .filter((event) => marqueeCategory === 'all' || event.category === marqueeCategory)
+      .sort((a, b) => eventTimestamp(a) - eventTimestamp(b));
+    const tickerItemsMarkup = (decorative) => marqueeEvents.map((event) => {
+      const date = new Date(eventTimestamp(event));
+      const label = date.toLocaleDateString('en-ZA', { weekday: 'short', day: '2-digit', month: 'short', timeZone: 'Africa/Johannesburg' }).replace(',', '').toUpperCase();
+      return `<a class="category-marquee-item" href="event.html?id=${encodeURIComponent(event.id)}"${decorative ? ' tabindex="-1"' : ''} aria-label="${escapeHtml(event.title)}, ${escapeHtml(label)}">
+        <time class="category-marquee-date" datetime="${escapeHtml(event.date.slice(0, 10))}">${escapeHtml(label)}</time><span class="category-marquee-title">${escapeHtml(event.title)}</span><span class="visually-hidden">View event</span>
+      </a>`;
+    }).join('');
+    const buildMarqueeGroup = (copies, decorative) => {
+      const group = document.createElement('div');
+      group.className = 'category-marquee-group';
+      if (decorative) group.setAttribute('aria-hidden', 'true');
+      for (let index = 0; index < copies; index += 1) {
+        const copy = document.createElement('div');
+        copy.className = 'category-marquee-copy';
+        if (decorative || index > 0) {
+          copy.classList.add('category-marquee-filler');
+          copy.setAttribute('aria-hidden', 'true');
+        }
+        copy.innerHTML = tickerItemsMarkup(decorative || index > 0);
+        group.appendChild(copy);
+      }
+      return group;
+    };
+    const renderCategoryMarquee = () => {
+      if (!marqueeEvents.length) { categoryMarqueeRoot.hidden = true; return; }
+      categoryMarqueeRoot.hidden = false;
+      categoryMarqueeTrack.replaceChildren();
+      const measure = document.createElement('div');
+      measure.className = 'category-marquee-group category-marquee-measure';
+      measure.innerHTML = tickerItemsMarkup(false);
+      categoryMarqueeTrack.appendChild(measure);
+      const oneSetWidth = Math.max(measure.getBoundingClientRect().width, 1);
+      const copies = Math.max(1, Math.ceil((categoryMarqueeWindow.clientWidth + oneSetWidth) / oneSetWidth));
+      categoryMarqueeTrack.replaceChildren(buildMarqueeGroup(copies, false), buildMarqueeGroup(copies, true));
+      const groupWidth = categoryMarqueeTrack.firstElementChild.getBoundingClientRect().width;
+      categoryMarqueeTrack.style.setProperty('--category-marquee-duration', `${Math.max(22, groupWidth / 55).toFixed(1)}s`);
+    };
+    renderCategoryMarquee();
+    let marqueeResizeTimer = 0;
+    window.addEventListener('resize', () => {
+      window.clearTimeout(marqueeResizeTimer);
+      marqueeResizeTimer = window.setTimeout(renderCategoryMarquee, 160);
+    }, { passive: true });
+  }
+
+  // Actual listings beginning within the next seven days; the deck never pads with placeholders.
   const nearTermGrid = document.getElementById('nearTermGrid');
   if (nearTermGrid) {
     const mainCard = document.getElementById('mainCountdownCard');
@@ -208,7 +290,7 @@
     const previousButton = document.getElementById('nearTermPrev');
     const nextButton = document.getElementById('nearTermNext');
     const status = document.getElementById('nearTermCarouselStatus');
-    const nextWindow = 72 * 60 * 60 * 1000;
+    const nextWindow = 7 * 24 * 60 * 60 * 1000;
     let visibleIds = [];
     let currentTicketIndex = 0;
     const mobileDeckQuery = window.matchMedia('(max-width: 767px)');
@@ -271,7 +353,9 @@
       card.querySelectorAll('[data-ticket-turn]').forEach((button) => button.setAttribute('aria-expanded', String(flipped)));
     };
     const updateCountdownValues = (event, now = Date.now()) => {
-      const countdownEvent = activeHeroEvent && eventTimestamp(activeHeroEvent) > now ? activeHeroEvent : event;
+      const activeSlideWithinWeek = activeHeroEvent && eventTimestamp(activeHeroEvent) > now && eventTimestamp(activeHeroEvent) <= now + nextWindow;
+      const nextWeekEvent = EVENTS.filter((item) => eventTimestamp(item) > now && eventTimestamp(item) <= now + nextWindow).sort((a, b) => eventTimestamp(a) - eventTimestamp(b))[0];
+      const countdownEvent = activeSlideWithinWeek ? activeHeroEvent : (nextWeekEvent || event);
       if (countdownEvent) {
         const parts = countdownParts(eventTimestamp(countdownEvent), now);
         const hours = document.getElementById('nextHours');
@@ -292,7 +376,7 @@
       const upcoming = EVENTS.filter((event) => eventTimestamp(event) > now && eventTimestamp(event) <= now + nextWindow).sort((a, b) => eventTimestamp(a) - eventTimestamp(b));
       visibleIds = upcoming.map((event) => event.id);
       if (!upcoming.length) {
-        nearTermGrid.innerHTML = '<div class="near-term-empty">No events are scheduled to begin within the next 72 hours. <a href="events.html">Browse the full event calendar ↗</a></div>';
+        nearTermGrid.innerHTML = '<div class="near-term-empty">No events are scheduled to begin within the next seven days. <a href="events.html">Browse the full event calendar ↗</a></div>';
         currentTicketIndex = 0;
         if (mainCard) mainCard.hidden = !activeHeroEvent;
         if (activeHeroEvent) updateCountdownValues(activeHeroEvent, now);
@@ -551,15 +635,22 @@
     const event = eventById(id);
     document.title = `${event.title} — Open Tickets`;
     const put = (selector, value) => { const node = document.querySelector(selector); if (node) node.textContent = value; };
-    const image = document.getElementById('eventHeroImage');
-    if (image) { image.src = event.image; image.alt = event.alt; }
+    const image = document.getElementById('eventDetailHeroImage');
+    if (image) { image.src = event.image; image.alt = ''; image.dataset.eventId = event.id; }
     put('#eventName', event.title); put('#breadcrumbEvent', event.title); put('#eventCategory', event.categoryLabel.toUpperCase());
     put('#eventDate', `${event.day} ${event.month} 2026 · ${event.time}`); put('#eventVenue', event.venue);
     put('#factDate', `${event.day} ${event.month} 2026 · ${event.time}`); put('#factVenue', event.venue);
     put('#eventDescription', event.description); put('#eventLongDescription', event.longDescription || 'Check the official event page for updated entry information, event policies and any venue-specific requirements.');
     put('#venueName', event.venue); put('#venueAddress', event.venueAddress);
+    const venueQuery = event.venueAddress || [event.venue, event.city, 'South Africa'].filter(Boolean).join(', ');
+    const encodedVenueQuery = encodeURIComponent(venueQuery);
     const mapLink = document.getElementById('mapLink');
-    if (mapLink) mapLink.href = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${event.venue} ${event.city}`)}`;
+    if (mapLink) mapLink.href = `https://www.google.com/maps/dir/?api=1&destination=${encodedVenueQuery}`;
+    const venueMap = document.getElementById('venueMap');
+    if (venueMap) {
+      venueMap.src = `https://maps.google.com/maps?q=${encodedVenueQuery}&z=15&output=embed`;
+      venueMap.title = `Google Maps location for ${event.venue}, ${event.city}`;
+    }
     const officialLink = document.getElementById('officialEventLink');
     if (officialLink) officialLink.href = officialUrl(event);
     const ticketOptions = document.getElementById('ticketOptions');
@@ -673,13 +764,13 @@
         const fromOfficialFeed = Boolean(liveEvents) && /^https:\/\//i.test(event.image || '');
         return {
           event,
-          image: forcedImage || (fromOfficialFeed ? `/api/hero-image?url=${encodeURIComponent(event.image)}` : (event.id === 'appel' ? 'assets/hero-appel-event.png' : event.image)),
-          alt: forcedAlt || (event.id === 'appel' ? 'Appel in PE concert event artwork, 6 November 2026' : (event.alt || event.title))
+          image: forcedImage || (fromOfficialFeed ? `/api/hero-image?url=${encodeURIComponent(event.image)}` : (event.id === 'appel' ? 'assets/hero-home-concert-ai.png' : event.image)),
+          alt: forcedAlt || (event.id === 'appel' ? 'AI-generated panoramic concert crowd for the live-music hero; atmospheric artwork, not the official event poster' : (event.alt || event.title))
         };
       };
       const featuredSlides = [];
+      if (concertEvent) featuredSlides.push(makeSlide(concertEvent, concertEvent.id === 'appel' ? 'assets/hero-home-concert-ai.png' : null, concertEvent.id === 'appel' ? 'AI-generated panoramic concert crowd for the live-music hero; atmospheric artwork, not the official event poster' : undefined));
       if (footballEvent) featuredSlides.push(makeSlide(footballEvent, 'assets/football-matchday-hero.png', 'Illustrative pre-match football team lineup artwork; not a specific team or live-event photograph'));
-      if (concertEvent) featuredSlides.push(makeSlide(concertEvent, concertEvent.id === 'appel' ? 'assets/hero-appel-event.png' : null, concertEvent.id === 'appel' ? 'Appel in PE concert banner, 6 November 2026' : undefined));
       const featuredIds = new Set(featuredSlides.map((slide) => slide.event.id));
       const remainingSlides = upcoming.filter((event) => !featuredIds.has(event.id)).map((event) => makeSlide(event));
       return [...featuredSlides, ...remainingSlides];

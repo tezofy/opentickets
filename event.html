@@ -9,7 +9,7 @@
         <img class="header-brand-logo" src="assets/open-tickets-logo.png" alt="" aria-hidden="true">
       </a>
       <nav class="primary-nav" id="primaryNav" aria-label="Main navigation">
-        <a class="nav-link active" aria-current="page" href="events.html">Events</a><a class="nav-link" href="events.html?category=football">Sports</a><a class="nav-link" href="events.html?category=music">Music</a><a class="nav-link" href="events.html?category=outdoor">Outdoor</a><a class="nav-link" href="faq.html">FAQs</a><a class="nav-link" href="https://opentickets.co.za/support">Support</a>
+        <a class="nav-link active" aria-current="page" href="events.html">Events</a><a class="nav-link" href="sports.html">Sports</a><a class="nav-link" href="music.html">Music</a><a class="nav-link" href="outdoor.html">Outdoor</a><a class="nav-link" href="faq.html">FAQs</a><a class="nav-link" href="https://opentickets.co.za/support">Support</a>
       <a class="nav-link mobile-auth-link mobile-auth-signup" href="https://www.opentickets.co.za/faq/account-profile" aria-label="Sign up: learn how to create an Open Tickets account">Sign up</a><a class="nav-link mobile-auth-link mobile-auth-login" href="https://opentickets.co.za/login">Log in</a></nav>
       <a class="desktop-header-search" href="search.html" aria-label="Search events"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#icon-search"></use></svg></a><div class="header-actions"><a class="header-signup" href="https://www.opentickets.co.za/faq/account-profile" aria-label="Sign up: learn how to create an Open Tickets account">Sign up</a><a class="header-login" href="https://opentickets.co.za/login">Log in</a></div>
       <a class="mobile-header-search" href="search.html" aria-label="Search events"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#icon-search"></use></svg></a>
@@ -19,26 +19,45 @@
   <main>
     <div class="container event-breadcrumb"><a href="index.html">Home</a><span>/</span><a href="events.html">Events</a><span>/</span><span id="breadcrumbEvent">Event details</span></div>
     <section class="event-detail-hero" aria-labelledby="eventName">
-      <img class="event-detail-hero-image" src="assets/hero-event-details-ai.jpg" alt="" aria-hidden="true">
-      <div class="event-detail-hero-shade"></div>
+      <img class="event-detail-hero-image" id="eventDetailHeroImage" src="assets/kaizer-vs-ts-galaxy.jpg" alt="" aria-hidden="true">
+      <div class="event-detail-hero-shade" aria-hidden="true"></div>
       <div class="container event-detail-hero-inner">
         <div class="event-detail-hero-copy">
-          <div class="event-hero-label"><span class="hero-note-dot"></span><span id="eventCategory">LIVE EVENT</span><span class="event-label-divider">/</span><span>EVENT GUIDE</span></div>
+          <div class="event-hero-label"><span class="hero-note-dot"></span><span id="eventCategory">LIVE EVENT</span><span class="event-label-divider">/</span><span>OFFICIAL EVENT GUIDE</span></div>
           <h1 id="eventName">Loading event...</h1>
-          <div class="event-detail-meta"><span><svg class="icon"><use href="assets/icons.svg#icon-calendar"></use></svg><span id="eventDate">Date to be announced</span></span><span><svg class="icon"><use href="assets/icons.svg#icon-location"></use></svg><span id="eventVenue">Venue</span></span></div>
-          <p class="event-detail-intro">Everything you need to know before you go—event information, venue directions and the official ticket hand-off.</p>
-          <a class="btn btn-gold" href="#tickets">View ticket options <span>↓</span></a>
+          <div class="event-detail-meta"><span><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#icon-calendar"></use></svg><span id="eventDate">Date to be announced</span></span><span><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#icon-location"></use></svg><span id="eventVenue">Venue</span></span></div>
+          <p class="event-detail-intro">Event details, venue directions and official ticket options—all in one place.</p>
+          <a class="btn btn-gold" href="#tickets">Explore ticket options <span>↓</span></a>
         </div>
-        <figure class="event-poster-card"><img id="eventHeroImage" src="assets/kaizer-vs-ts-galaxy.jpg" alt="Official event artwork"><figcaption><span>OFFICIAL EVENT ARTWORK</span><span class="poster-figcaption-mark">OPEN TICKETS</span></figcaption></figure>
         <div class="event-hero-watermark" aria-hidden="true">OPEN TICKETS <span>·</span> EVENT FILE</div>
       </div>
     </section>
     <section class="event-detail-section section-space"><div class="container event-detail-layout"><div class="event-main-column"><div class="event-facts"><div class="event-fact"><span class="fact-icon"><svg class="icon"><use href="assets/icons.svg#icon-calendar"></use></svg></span><div><small>DATE & TIME</small><b id="factDate">—</b></div></div><div class="event-fact"><span class="fact-icon"><svg class="icon"><use href="assets/icons.svg#icon-location"></use></svg></span><div><small>VENUE</small><b id="factVenue">—</b></div></div><div class="event-fact"><span class="fact-icon"><svg class="icon"><use href="assets/icons.svg#icon-ticket"></use></svg></span><div><small>ENTRY</small><b>Digital tickets</b></div></div></div>
-      <article class="event-about"><div class="eyebrow eyebrow-dark"><span class="eyebrow-mark"></span> EVENT INFORMATION</div><details class="mobile-description-disclosure" data-mobile-collapse open><summary><h2>About this <em>event.</em></h2></summary><div class="mobile-description-copy"><p id="eventDescription">Event information will appear here.</p><div class="event-long-copy" id="eventLongDescription"></div></div></details></article>
-      <section class="venue-card"><div class="venue-copy"><div class="eyebrow eyebrow-dark"><span class="eyebrow-mark"></span> VENUE & DIRECTIONS</div><details class="mobile-description-disclosure" data-mobile-collapse open><summary><h2 id="venueName">Venue</h2></summary><div class="mobile-description-copy"><p id="venueAddress">Venue address</p></div></details><a class="text-link" id="mapLink" href="https://maps.google.com" target="_blank" rel="noreferrer">View directions <span>↗</span></a></div><div class="map-visual" aria-label="Stylized venue map illustration"><div class="map-grid"></div><div class="map-route route-a"></div><div class="map-route route-b"></div><span class="map-pin"><svg class="icon"><use href="assets/icons.svg#icon-location"></use></svg></span><span class="map-label">EVENT<br>VENUE</span></div></section>
+      <article class="event-about" aria-labelledby="eventAboutTitle">
+        <div class="event-about-head"><div class="eyebrow eyebrow-dark"><span class="eyebrow-mark"></span> EVENT INFORMATION</div><span class="event-about-index">EVENT GUIDE / 01</span></div>
+        <details class="mobile-description-disclosure" data-mobile-collapse open>
+          <summary><h2 id="eventAboutTitle">About this <em>event.</em></h2><span class="event-about-toggle" aria-hidden="true">+</span></summary>
+          <div class="event-about-content mobile-description-copy"><p id="eventDescription">Event information will appear here.</p><div class="event-long-copy" id="eventLongDescription"></div></div>
+        </details>
+        <div class="event-about-source"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#icon-check"></use></svg><span>Event details are based on the listing. Confirm updates and entry rules on the official event page.</span></div>
+      </article>
+      <section class="venue-card" aria-label="Venue and directions">
+        <div class="venue-copy"><div class="eyebrow eyebrow-dark"><span class="eyebrow-mark"></span> VENUE & DIRECTIONS</div><details class="mobile-description-disclosure" data-mobile-collapse open><summary><h2 id="venueName">Venue</h2></summary><div class="mobile-description-copy"><p id="venueAddress">Venue address</p></div></details><a class="text-link" id="mapLink" href="https://maps.google.com" target="_blank" rel="noreferrer">Open directions in Google Maps <span>↗</span></a></div>
+        <div class="venue-map"><iframe id="venueMap" title="Google Maps location for the event venue" src="https://maps.google.com/maps?q=South%20Africa&z=5&output=embed" loading="eager" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe><span class="venue-map-badge"><span></span> GOOGLE MAPS</span></div>
+      </section>
       <div class="ticket-notice"><span class="notice-mark"><svg class="icon"><use href="assets/icons.svg#icon-help"></use></svg></span><p>Final ticket options, current availability, pricing and payment are confirmed on the official Open Tickets event page.</p></div>
     </div>
-    <aside class="ticket-panel" id="tickets"><div class="ticket-panel-top"><span class="ticket-panel-label"><i></i> TICKET OPTIONS</span><span class="ticket-panel-mark">OT / 01</span></div><details class="mobile-description-disclosure" data-mobile-collapse open><summary><h2>Choose your <em>tickets.</em></h2></summary><p class="ticket-panel-intro mobile-description-copy">Select a ticket category and quantity. Live pricing and availability are confirmed during official checkout.</p></details><div id="ticketOptions" class="ticket-options"></div><div class="quantity-row"><span>Number of tickets</span><div class="quantity-control"><button type="button" id="qtyMinus" aria-label="Remove one ticket">−</button><output id="ticketQuantity">1</output><button type="button" id="qtyPlus" aria-label="Add one ticket">+</button></div></div><div class="ticket-total"><span>Estimated total</span><strong id="ticketTotal">—</strong></div><button class="btn btn-gold btn-block" id="bookNowButton" type="button">Continue to booking <span>↗</span></button><div class="secure-note"><svg class="icon"><use href="assets/icons.svg#icon-shield"></use></svg> Official booking hand-off · Digital ticket delivery</div><div class="panel-dash"></div><a class="panel-help" href="faq.html#purchasing">Questions about your tickets? <span>Visit FAQs ↗</span></a></aside>
+    <aside class="ticket-panel ticket-panel-premium" id="tickets" aria-labelledby="ticketPanelTitle">
+      <div class="ticket-panel-top"><span class="ticket-panel-label"><i></i> TICKET OPTIONS</span><span class="ticket-panel-mark">OFFICIAL LISTING</span></div>
+      <details class="mobile-description-disclosure" data-mobile-collapse open><summary><h2 id="ticketPanelTitle">Choose your <em>ticket.</em></h2></summary><p class="ticket-panel-intro mobile-description-copy">Select a ticket type and quantity to review an estimate. Current availability and final pricing are confirmed by Open Tickets.</p></details>
+      <div class="ticket-options-heading"><span>SELECT A CATEGORY</span><span>PRICE</span></div>
+      <div id="ticketOptions" class="ticket-options"></div>
+      <div class="quantity-row"><span>Number of tickets</span><div class="quantity-control"><button type="button" id="qtyMinus" aria-label="Remove one ticket">−</button><output id="ticketQuantity">1</output><button type="button" id="qtyPlus" aria-label="Add one ticket">+</button></div></div>
+      <div class="ticket-total"><span>Estimated total</span><strong id="ticketTotal">—</strong></div>
+      <button class="btn btn-gold btn-block" id="bookNowButton" type="button">Continue to official booking <span>↗</span></button>
+      <div class="secure-note"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#icon-shield"></use></svg> Secure hand-off to the official event listing</div>
+      <div class="panel-dash"></div><a class="panel-help" href="faq.html#purchasing">Need help choosing? <span>Visit FAQs ↗</span></a>
+    </aside>
     </div></section>
     <section class="related-section"><div class="container"><div class="listing-top"><div><div class="eyebrow"><span class="eyebrow-mark"></span> DISCOVER RELATED EVENTS</div><h2>Related events</h2></div><a class="text-link text-link-light" href="events.html">Explore all events <span>↗</span></a></div><div class="row g-4 event-grid" id="relatedEvents"></div></div></section>
   </main>
@@ -50,6 +69,6 @@
     <a class="bottom-nav-link" href="https://www.opentickets.co.za/faq/account-profile" aria-label="Open Tickets account and profile guidance"><svg class="icon"><use href="assets/icons.svg#icon-account"></use></svg><span>Profile</span></a>
   </nav>
 
-  <footer class="site-footer"><div class="container footer-main"><div class="footer-brand"><a class="brand" href="index.html"><img src="assets/open-tickets-logo.png" alt="Open Tickets"></a><p>Official tickets for live events across South Africa.</p></div><div class="footer-column"><b>Discover</b><a href="events.html">All events</a><a href="events.html?category=football">Football</a><a href="events.html?category=music">Music & live</a></div><div class="footer-column"><b>Customer support</b><a href="faq.html">FAQs & Help Centre</a><a href="faq.html#delivery">Ticket delivery</a><a href="faq.html#account">Your account</a><a href="https://opentickets.co.za/support">Contact support ↗</a></div><div class="footer-cta"><span>DISCOVER YOUR NEXT EVENT</span><a href="events.html">Browse events <b>↗</b></a></div></div><div class="container footer-bottom"><span>© 2026 Open Tickets. All rights reserved.</span><span>Official ticketing for live experiences.</span><a href="#top">Back to top ↑</a></div></footer>
+  <footer class="site-footer"><div class="container footer-main"><div class="footer-brand"><a class="brand" href="index.html"><img src="assets/open-tickets-logo.png" alt="Open Tickets"></a><p>Official tickets for live events across South Africa.</p></div><div class="footer-column"><b>Discover</b><a href="events.html">All events</a><a href="sports.html">Sports</a><a href="music.html">Music & live</a><a href="outdoor.html">Outdoor</a></div><div class="footer-column"><b>Customer support</b><a href="faq.html">FAQs & Help Centre</a><a href="faq.html#delivery">Ticket delivery</a><a href="faq.html#account">Your account</a><a href="https://opentickets.co.za/support">Contact support ↗</a></div><div class="footer-cta"><span>DISCOVER YOUR NEXT EVENT</span><a href="events.html">Browse events <b>↗</b></a></div></div><div class="container footer-bottom"><span>© 2026 Open Tickets. All rights reserved.</span><span>Official ticketing for live experiences.</span><a href="#top">Back to top ↑</a></div></footer>
 </body>
 </html>

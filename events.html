@@ -14,7 +14,7 @@
         <img class="header-brand-logo" src="assets/open-tickets-logo.png" alt="" aria-hidden="true">
       </a>
       <nav class="primary-nav" id="primaryNav" aria-label="Main navigation">
-        <a class="nav-link active" aria-current="page" href="events.html">Events</a><a class="nav-link" href="events.html?category=football">Sports</a><a class="nav-link" href="events.html?category=music">Music</a><a class="nav-link" href="events.html?category=outdoor">Outdoor</a><a class="nav-link" href="faq.html">FAQs</a><a class="nav-link" href="https://opentickets.co.za/support">Support</a>
+        <a class="nav-link active" aria-current="page" href="events.html">Events</a><a class="nav-link" href="sports.html">Sports</a><a class="nav-link" href="music.html">Music</a><a class="nav-link" href="outdoor.html">Outdoor</a><a class="nav-link" href="faq.html">FAQs</a><a class="nav-link" href="https://opentickets.co.za/support">Support</a>
       <a class="nav-link mobile-auth-link mobile-auth-signup" href="https://www.opentickets.co.za/faq/account-profile" aria-label="Sign up: learn how to create an Open Tickets account">Sign up</a><a class="nav-link mobile-auth-link mobile-auth-login" href="https://opentickets.co.za/login">Log in</a></nav>
       <a class="desktop-header-search" href="search.html" aria-label="Search events"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#icon-search"></use></svg></a><div class="header-actions"><a class="header-signup" href="https://www.opentickets.co.za/faq/account-profile" aria-label="Sign up: learn how to create an Open Tickets account">Sign up</a><a class="header-login" href="https://opentickets.co.za/login">Log in</a></div>
       <a class="mobile-header-search" href="search.html" aria-label="Search events"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#icon-search"></use></svg></a>
@@ -23,7 +23,7 @@
   </header>
   <main>
     <section class="page-hero events-page-hero" aria-labelledby="eventsPageTitle">
-      <img class="page-hero-image" src="assets/hero-events-ai.jpg" alt="" aria-hidden="true">
+      <img class="page-hero-image" src="assets/hero-events-category.jpg" alt="" aria-hidden="true">
       <div class="page-hero-shade"></div>
       <div class="container page-hero-inner">
         <div class="eyebrow"><span class="eyebrow-mark"></span> DISCOVER LIVE EVENTS</div>
@@ -35,6 +35,14 @@
         <div class="page-hero-note"><span class="hero-note-dot"></span> Browse sport, music and live events in one place</div>
       </div>
     </section>
+    <aside class="category-event-marquee" id="categoryEventTicker" aria-label="Event titles and dates, continuously scrolling">
+      <div class="container category-marquee-inner">
+        <div class="category-marquee-label"><span class="category-marquee-dot" aria-hidden="true"></span><span>LISTED EVENTS</span></div>
+        <div class="category-marquee-window" id="categoryMarqueeWindow" tabindex="0" role="region" aria-label="Scrolling event titles and dates">
+          <div class="category-marquee-track" id="categoryMarqueeTrack" aria-live="off"><div class="category-marquee-loading">Loading event listings…</div></div>
+        </div>
+      </div>
+    </aside>
     <section class="section-space listing-section"><div class="container"><div class="listing-top"><div><div class="eyebrow eyebrow-dark"><span class="eyebrow-mark"></span> UPCOMING EVENTS</div><h2>Upcoming events<span class="title-count" id="eventCount">06</span></h2></div><div class="sort-control"><label for="eventSort">Sort by</label><select id="eventSort"><option value="date">Soonest first</option><option value="name">Event name</option></select></div></div>
       <div class="isotope-filters event-page-filters" role="group" aria-label="Filter events"><button class="filter-btn active" data-filter="*" aria-pressed="true">All events</button><button class="filter-btn" data-filter=".category-football" aria-pressed="false">Football</button><button class="filter-btn" data-filter=".category-music" aria-pressed="false">Music & live</button><button class="filter-btn" data-filter=".category-outdoor" aria-pressed="false">Outdoor</button></div>
       <div class="row g-4 event-grid" id="allEventGrid" aria-live="polite"></div>
@@ -48,6 +56,6 @@
     <a class="bottom-nav-link" href="https://www.opentickets.co.za/faq/account-profile" aria-label="Open Tickets account and profile guidance"><svg class="icon"><use href="assets/icons.svg#icon-account"></use></svg><span>Profile</span></a>
   </nav>
 
-  <footer class="site-footer"><div class="container footer-main"><div class="footer-brand"><a class="brand" href="index.html"><img src="assets/open-tickets-logo.png" alt="Open Tickets"></a><p>Official tickets for live events across South Africa.</p></div><div class="footer-column"><b>Discover</b><a href="events.html">All events</a><a href="events.html?category=football">Football</a><a href="events.html?category=music">Music & live</a></div><div class="footer-column"><b>Customer support</b><a href="faq.html">FAQs & Help Centre</a><a href="faq.html#delivery">Ticket delivery</a><a href="faq.html#account">Your account</a><a href="https://opentickets.co.za/support">Contact support ↗</a></div><div class="footer-cta"><span>DISCOVER YOUR NEXT EVENT</span><a href="events.html">Browse events <b>↗</b></a></div></div><div class="container footer-bottom"><span>© 2026 Open Tickets. All rights reserved.</span><span>Official ticketing for live experiences.</span><a href="#top">Back to top ↑</a></div></footer>
+  <footer class="site-footer"><div class="container footer-main"><div class="footer-brand"><a class="brand" href="index.html"><img src="assets/open-tickets-logo.png" alt="Open Tickets"></a><p>Official tickets for live events across South Africa.</p></div><div class="footer-column"><b>Discover</b><a href="events.html">All events</a><a href="sports.html">Sports</a><a href="music.html">Music & live</a><a href="outdoor.html">Outdoor</a></div><div class="footer-column"><b>Customer support</b><a href="faq.html">FAQs & Help Centre</a><a href="faq.html#delivery">Ticket delivery</a><a href="faq.html#account">Your account</a><a href="https://opentickets.co.za/support">Contact support ↗</a></div><div class="footer-cta"><span>DISCOVER YOUR NEXT EVENT</span><a href="events.html">Browse events <b>↗</b></a></div></div><div class="container footer-bottom"><span>© 2026 Open Tickets. All rights reserved.</span><span>Official ticketing for live experiences.</span><a href="#top">Back to top ↑</a></div></footer>
 </body>
 </html>
